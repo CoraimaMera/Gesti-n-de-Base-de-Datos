@@ -1,0 +1,41 @@
+insert into CLIENTE values
+(1,'1257894562','Ingrid Fatima','Santana Sardi','052487896','0982222222','ingrid@hotmail.com','Calle 25'),
+(2,'1257894585','Fabián Alberto','Hidalgo Tigua','05249896','0921111111','fabian@hotmail.com','Calle 24 A'),
+(3,'1285294585','Liseth María','Jonioux Delgado','052498876','0925555555','lissette@hotmail.com','Calle 20'),
+(4,'1257874521','Orley Sebastian','Montanero Alcivar','052748562','0983333333','orley@hotmail.com','Av 25'),
+(5,'1524789658','Jennifer María','Chávez Macías','052452789','0927777777','jennifer@hotmail.com','Av 20'),
+(6,'1313038664','Coraima Guadalupe','Mera Torres','052424353','0960873456','coraima@hotmail.com','Calle 13');
+/*==============================================================*/
+/*Seleccionar Tabla CLIENTE*/
+select * from CLIENTE;                                       
+/*==============================================================*/
+
+insert into PEDIDO values
+(1, 2,'Pollo a la Plancha', 1),
+(2, 3,'Camaron Apanado', 2),
+(3, 1,'Arroz Marinero', 1),
+(4, 5,'Ceviche', 1);
+/*==============================================================*/
+/*Seleccionar Tabla PEDIDO*/
+select * from PEDIDO;                                       
+/*==============================================================*/
+
+insert into RESTAURANTE values
+(1, 'Restaurante Lupita', '052487356', 'Manta Av. 20'),
+(2, 'Restaurante Lupita', '052482543', 'Manta Calle 25'),
+(3, 'Restaurante Lupita', '052495896', 'Manta Calle 13'),
+(4, 'Restaurante Lupita', '052487356', 'Manta Calle 20');
+/*==============================================================*/
+/*Seleccionar Tabla RESTAURANTE*/
+select * from RESTAURANTE;                                       
+/*==============================================================*/
+
+insert into MENU values
+(1,1,1,'Pollo a la Plancha',30,3),
+(2,2,1,'Camaron Apanado', 40,4),
+(3,3,1,'Arroz Marinero', 50,5),
+(4,4,1,'Ceviche', 20,3);
+/*==============================================================*/
+/*Seleccionar Tabla MENU*/
+select * from MENU;                                       
+/*==============================================================*/
