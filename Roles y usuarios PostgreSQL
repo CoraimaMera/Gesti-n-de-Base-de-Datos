@@ -1,0 +1,37 @@
+/*==============================================================*/
+/* Creación de Usuario                                          */
+/*==============================================================*/
+create user Coraima password '123456';
+create user Guadalupe password '654321';
+create user postgres password '654321';
+/*==============================================================*/
+/* Eliminación de Usuario                                       */
+/*==============================================================*/
+drop user Guadalupe;
+/*==============================================================*/
+/* Asignar SuperUsuario                                         */
+/*==============================================================*/
+alter user postgres superuser;
+/*==============================================================*/
+/* Creación de Rol                                              */
+/*==============================================================*/
+create role rol_menu;
+alter role  rol_menu user Coraima;
+--alter role rol_menu add member [Coraima];
+/*==============================================================*/
+/* Asignar Rol                                                  */
+/*==============================================================*/
+--Asignar que el SuperUsuario pueda crear bases de datos
+alter user postgres createdb;
+--Otorgar conexión a la base de datos a un usuario
+grant connect on database db_restaurant to Coraima;
+--Insert
+grant insert on menu to rol_menu; --si
+--Select
+grant select on menu to rol_menu; --no
+--Update
+grant update on menu to rol_menu; --si
+/*==============================================================*/
+/* Revocar Rol                                                  */
+/*==============================================================*/
+revoke select on menu from rol_menu;
