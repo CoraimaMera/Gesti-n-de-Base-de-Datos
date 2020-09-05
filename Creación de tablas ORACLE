@@ -1,0 +1,63 @@
+/*==============================================================*/
+/* Table: CLIENTE                                               */
+/*==============================================================*/
+create table CLIENTE (
+   IDCLIENTE             int                  not null,
+   IDENTIFICACIONCLIENTE varchar(20)          null,
+   NOMBRESCLIENTE        varchar(20)          null,
+   APELLIDOSCLIENTE      varchar(20)          null,
+   TELEFONOCONVENCIONAL  varchar(20)          null,
+   TELEFONOMOVIL         varchar(20)          null,
+   EMAILCLIENTE          varchar(30)          null,
+   DIRECCIONCLIENTE      varchar(50)          null,
+   constraint PK_CLIENTE primary key (IDCLIENTE)
+)
+
+/*==============================================================*/
+/* Table: PEDIDO                                                */
+/*==============================================================*/
+create table PEDIDO (
+   IDPEDIDO             int                  not null,
+   IDCLIENTE            int                  not null,
+   DESCRIPCIONPEDIDO    varchar(20)          null,
+   CANTIDADPEDIDO       int                  null,
+   constraint PK_PEDIDO primary key (IDCLIENTE)
+)
+
+/*==============================================================*/
+/* Table: RESTAURANTE                                           */
+/*==============================================================*/
+create table RESTAURANTE (
+   IDRESTAURANTE         int                  not null,
+   NOMBRERESTAURANTE     varchar(20)          null,
+   TELEFONOCONVENCIONAL  varchar(10)          null,
+   DIRECCIONRESTAURANTE  varchar(50)          null,
+   constraint PK_RESTAURANTE primary key (IDRESTAURANTE)
+)
+
+/*==============================================================*/
+/* Table: MENU                                                  */
+/*==============================================================*/
+create table MENU(
+	IDMENU               int                  not null,
+	IDRESTAURANTE        int                  not null,
+	IDPEDIDO             int                  not null,
+	NOMBREMENU           varchar(20)          null,
+	CANTIDADMENU         int                  null,
+	PRECIOMENU           int                  null,
+	constraint PK_MENU primary key (IDRESTAURANTE, IDPEDIDO)
+)
+
+/*==============================================================*/
+/* Table: REPARTIDOR                                            */
+/*==============================================================*/
+create table REPARTIDOR(
+	IDREPARTIDOR         int                  not null,
+	IDRESTAURANTE        int                  not null,
+	CODIGOREPARTIDOR     int                  null,
+	IDENTIFICACIONREPARTIDOR int              null,
+	NOMBRESREPARTIDOR    varchar(20)          null,
+	APELLIDOSSREPARTIDOR varchar(20)          null,
+    TELEFONOMOVIL        varchar(10)          null,
+	constraint PK_REPARTIDOR primary key (IDRESTAURANTE)
+)
