@@ -1,0 +1,28 @@
+/*==============================================================*/
+/* Creación de Usuario Sesión (login)                           */
+/*==============================================================*/
+create login Servidorsql with password='123456';
+
+/*==============================================================*/
+/* Creación de Usuario para manipular la Base de Datos          */
+/*==============================================================*/
+use DB_RESTAURANT;
+create user Guadalupe for login Servidorsql;
+/*==============================================================*/
+/* Creación de Rol                                              */
+/*==============================================================*/
+create role rol_pedido;
+alter role rol_pedido add member [Guadalupe];
+/*==============================================================*/
+/* Asignar Rol                                                  */
+/*==============================================================*/
+--Insert
+grant insert to rol_pedido;
+grant insert on [dbo].[PEDIDO] to rol_pedido;
+--Select
+grant select to rol_pedido;
+/*==============================================================*/
+/* Revocar Rol                                                  */
+/*==============================================================*/
+revoke insert to rol_pedido;
+revoke insert on [dbo].[PEDIDO] to rol_pedido;
