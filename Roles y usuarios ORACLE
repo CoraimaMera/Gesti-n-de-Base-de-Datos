@@ -1,0 +1,25 @@
+/*==============================================================*/
+/* Creación de Usuario                                          */
+/*==============================================================*/
+create user Coraima identified by "123456";
+--Conectar con el usuario creado
+grant connect,resource to Coraima;
+
+/*==============================================================*/
+/* Asignar Rol                                                  */
+/*==============================================================*/
+create role rol_pedido
+grant rol_pedido to Coraima;
+
+/*==============================================================*/
+/* Asignar Privilegios a Rol                                    */
+/*==============================================================*/
+grant insert rol_pedido; --si
+grant select rol_pedido; --si
+grant update rol_pedido; --si
+gran select on menu to rol_pedido --no
+
+/*==============================================================*/
+/* Revocar Rol                                                  */
+/*==============================================================*/
+revoke select on menu from rol_pedido;
